@@ -13,12 +13,12 @@ import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public final class RobotUtils {
-    private RobotUtils() {
+public final class RobotUtil {
+    private RobotUtil() {
     }
 
     public static String getAppClassPath() throws URISyntaxException {
-        URL resource = RobotUtils.class.getClassLoader().getResource("");
+        URL resource = RobotUtil.class.getClassLoader().getResource("");
         Path path = Paths.get(resource.toURI());
         return path.toString();
     }
@@ -31,7 +31,7 @@ public final class RobotUtils {
      * @throws URISyntaxException 异常
      */
     public static File getImageFile(String... filePath) throws URISyntaxException {
-        String appClassPath = RobotUtils.getAppClassPath();
+        String appClassPath = RobotUtil.getAppClassPath();
         Path path = Paths.get(appClassPath, filePath);
         return path.toFile();
     }
