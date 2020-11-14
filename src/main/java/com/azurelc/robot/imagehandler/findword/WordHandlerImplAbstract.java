@@ -3,7 +3,7 @@ package com.azurelc.robot.imagehandler.findword;
 import com.azurelc.robot.common.entity.Coordinate;
 import com.azurelc.robot.common.entity.FivePoint;
 import com.azurelc.robot.common.entity.Point;
-import com.azurelc.robot.common.utils.RobotUtils;
+import com.azurelc.robot.common.utils.RobotUtil;
 import com.azurelc.robot.imagehandler.AbstractImageHandler;
 import java.awt.AWTException;
 import java.awt.image.BufferedImage;
@@ -52,7 +52,7 @@ public class WordHandlerImplAbstract extends AbstractImageHandler implements Wor
                 b = new Point(w, h, imageRGB[h][w]);
                 break;
             }
-            if (a != null && b != null && !RobotUtils.isEqualCoordinate(a, b)) {
+            if (a != null && b != null && !RobotUtil.isEqualCoordinate(a, b)) {
                 fivePoint.setA(a);
                 fivePoint.setB(b);
                 break;
@@ -76,7 +76,7 @@ public class WordHandlerImplAbstract extends AbstractImageHandler implements Wor
                 d = new Point(w, h, imageRGB[h][w]);
                 break;
             }
-            if (c != null && d != null && !RobotUtils.isEqualCoordinate(c, d)) {
+            if (c != null && d != null && !RobotUtil.isEqualCoordinate(c, d)) {
                 fivePoint.setC(c);
                 fivePoint.setD(d);
                 break;

@@ -7,5 +7,5 @@ import java.net.URISyntaxException;
 
 public interface FindImage {
     Coordinate doFindImage(Coordinate startCoordinate, Coordinate endCoordinate, double matchDegree,
-            String... keyImagePathStr) throws URISyntaxException, IOException, AWTException;
+            String keyImagePathStr) throws URISyntaxException, IOException, AWTException;
 }

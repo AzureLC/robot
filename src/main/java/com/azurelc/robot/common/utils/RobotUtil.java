@@ -17,25 +17,6 @@ public final class RobotUtil {
     private RobotUtil() {
     }
 
-    public static String getAppClassPath() throws URISyntaxException {
-        URL resource = RobotUtil.class.getClassLoader().getResource("");
-        Path path = Paths.get(resource.toURI());
-        return path.toString();
-    }
-
-    /**
-     * 获取resources下的文件
-     *
-     * @param filePath resources下文件的路径
-     * @return resources下的文件
-     * @throws URISyntaxException 异常
-     */
-    public static File getImageFile(String... filePath) throws URISyntaxException {
-        String appClassPath = RobotUtil.getAppClassPath();
-        Path path = Paths.get(appClassPath, filePath);
-        return path.toFile();
-    }
-
     /**
      * 获取图片RGB颜色矩阵
      *

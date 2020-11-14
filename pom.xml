@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.azurelc.robot</groupId>
-    <artifactId>robot</artifactId>
+    <artifactId>robot_script</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <build>
         <plugins>
@@ -13,8 +13,24 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>7</source>
-                    <target>7</target>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <!-- 指定入口函数 -->
+                            <mainClass>com.azurelc.robot.Main</mainClass>
+                            <!-- 是否添加依赖的jar路径配置 -->
+                            <addClasspath>true</addClasspath>
+                            <!-- 依赖的jar包存放位置，和生成的jar放在同一级目录下 -->
+                            <classpathPrefix>lib/</classpathPrefix>
+                        </manifest>
+                    </archive>
                 </configuration>
             </plugin>
         </plugins>
@@ -25,11 +41,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

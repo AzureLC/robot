@@ -3,7 +3,7 @@ package com.azurelc.robot.imagehandler;
 import com.azurelc.robot.common.entity.Coordinate;
 import com.azurelc.robot.common.entity.FivePoint;
 import com.azurelc.robot.common.entity.Point;
-import com.azurelc.robot.common.utils.RobotUtils;
+import com.azurelc.robot.common.utils.RobotUtil;
 import java.awt.AWTException;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -16,8 +16,8 @@ public abstract class AbstractImageHandler {
             int[][] keyImageRGB, int ignoreRgbColor, double matchDegree) throws URISyntaxException, IOException,
             AWTException {
         FivePoint fivePoint = findFivePoint(keyImageBuff, keyImageRGB, ignoreRgbColor);
-        BufferedImage screenShot = RobotUtils.getScreenShot(startCoordinate, endCoordinate);
-        int[][] screenShotRGB = RobotUtils.getImageGRB(screenShot);
+        BufferedImage screenShot = RobotUtil.getScreenShot(startCoordinate, endCoordinate);
+        int[][] screenShotRGB = RobotUtil.getImageGRB(screenShot);
 
         // 匹配四个点 + 精确匹配
         return matchFivePoint(fivePoint, keyImageBuff, keyImageRGB, screenShot, screenShotRGB, ignoreRgbColor,

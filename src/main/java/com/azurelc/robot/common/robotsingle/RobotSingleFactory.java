@@ -9,11 +9,15 @@ public final class RobotSingleFactory {
     private RobotSingleFactory() {
     }
 
-    public static Robot getRobotSingle() throws AWTException {
+    public static Robot getRobotSingle() {
         if (robot == null) {
             synchronized (RobotSingleFactory.class) {
                 if (robot == null) {
-                    robot = new Robot();
+                    try {
+                        robot = new Robot();
+                    } catch (AWTException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
